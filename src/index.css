@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+:root {
+  --color-text: #40566d;
+  --color-text-heading: #081f35;
+  --color-background: #fff;
+  --color-border: #dfe5eb;
+  --color-code-background: #f4f7fa;
+  --color-accent: #5546e8;
+  --shadow:
+    rgba(8, 31, 53, 0.1) 0 10px 15px -3px, rgba(8, 31, 53, 0.05) 0 4px 6px -2px;
+
+  --font-sans: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-heading: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+
+  font-family: var(--font-sans);
+  line-height: 1.45;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--color-text-heading);
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin: 2rem 0;
+
+  @media (max-width: 1024px) {
+    font-size: 2.25rem;
+    margin: 1.25rem 0;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 118%;
+  letter-spacing: -0.015rem;
+  margin: 0 0 0.5rem;
+
+  @media (max-width: 1024px) {
+    font-size: 1.25rem;
+  }
+}
+
+p {
+  margin: 0;
+}
