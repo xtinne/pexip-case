@@ -1,18 +1,23 @@
 @import 'tailwindcss';
 
-:root {
+@theme {
+  --color-primary: #081f35;
   --color-text: #40566d;
-  --color-text-heading: #081f35;
-  --color-background: #fff;
+  --color-heading: #081f35;
+  --color-surface: #fff;
   --color-border: #dfe5eb;
-  --color-code-background: #f4f7fa;
+  --color-background: #f4f7fa;
   --color-accent: #5546e8;
-  --shadow:
-    rgba(8, 31, 53, 0.1) 0 10px 15px -3px, rgba(8, 31, 53, 0.05) 0 4px 6px -2px;
-
+  --color-online: #047857;
+  --color-in-meeting: #1d4ed8;
+  --color-offline: #92400e;
+  --color-deactivated: #475569;
+  --color-danger: #b42318;
   --font-sans: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
   --font-heading: 'Inter', 'Avenir Next', 'Segoe UI', sans-serif;
+}
 
+:root {
   font-family: var(--font-sans);
   line-height: 1.45;
   color: var(--color-text);
@@ -24,48 +29,44 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  color: var(--color-text-heading);
-}
-
-h1 {
-  font-size: 3.5rem;
-  margin: 2rem 0;
-
-  @media (max-width: 1024px) {
-    font-size: 2.25rem;
-    margin: 1.25rem 0;
+@layer base {
+  body {
+    @apply m-0;
   }
-}
 
-h2 {
-  font-size: 1.5rem;
-  line-height: 118%;
-  letter-spacing: -0.015rem;
-  margin: 0 0 0.5rem;
-
-  @media (max-width: 1024px) {
-    font-size: 1.25rem;
+  body:has(dialog[open]) {
+    @apply overflow-hidden;
   }
-}
 
-p {
-  margin: 0;
+  h1,
+  h2 {
+    @apply m-0 font-heading font-semibold text-heading;
+  }
+
+  h1 {
+    @apply text-3xl tracking-tight;
+  }
+
+  h2 {
+    @apply text-lg;
+  }
+
+  p {
+    @apply m-0;
+  }
+
+  button:not(:disabled),
+  select {
+    @apply cursor-pointer;
+  }
+
+  input[type='search']::-webkit-search-cancel-button {
+    appearance: none;
+  }
 }

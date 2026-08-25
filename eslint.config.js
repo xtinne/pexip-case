@@ -37,6 +37,12 @@ export default defineConfig([
             'index',
             'type',
           ],
+          pathGroups: [
+            {
+              pattern: '@/**',
+              group: 'internal',
+            },
+          ],
         },
       ],
     },

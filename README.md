@@ -39,3 +39,16 @@ GET /api/devices/history → [{ period, online, inMeeting, offline, deactivated 
 ```
 
 Deriving the summary on the client instead is a perfectly good call.
+
+## Live demo
+
+[View the deployed application](https://pexip-case-tinne.vercel.app/)
+
+## Getting started
+
+Install the dependencies and start the development server:
+
+```bash
+npm install
+npm run dev
+```
